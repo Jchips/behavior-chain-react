@@ -5,6 +5,11 @@ import { Form, Button } from "react-bootstrap";
 // import PlacementModal from "./sub-components/PlacementModal";
 
 class Main extends Component {
+
+  /**
+   * Renders the behavior chain based on the user's form input
+   * @param {Event} e - The submit event when the user submits the behavior chain form.
+   */
   handleSubmit = (e) => {
     e.preventDefault(); // prevents instant refresh
     let form = e.target;
@@ -14,26 +19,18 @@ class Main extends Component {
   }
   
   render() {
-    // const {links, showPlacementModal, togglePlacementModal, modalType} = this.props;
     const {links, removeBubble} = this.props;
-
-    // let links = this.props.links;
     return (
       <main>
         <section>
           <Form onSubmit={this.handleSubmit}>
-            {links.map((link, index) =>
-              <FormGroup link={link} removeBubble={removeBubble} key={index} id={index}/>
+            {links.map(link =>
+              <FormGroup link={link} removeBubble={removeBubble} key={link.id} id={link.id}/>
             )}
             <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
-          {/* <PlacementModal
-            modalType={modalType}
-            showPlacementModal={showPlacementModal} 
-            togglePlacementModal={togglePlacementModal}
-          /> */}
         </section>
         <Render />
       </main>
