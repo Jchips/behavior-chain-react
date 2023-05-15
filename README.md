@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Create a Behavior Chain site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This site is for creating a behavior chain (DBT concept). This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Author: J. Rose
+
+## Version: 1.0.0
+
+## Changelog
+
+## Links/Resources
+
+- [Bootstrap 5]
 
 ## Available Scripts
 
