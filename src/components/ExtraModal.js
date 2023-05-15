@@ -9,20 +9,25 @@ class ExtraModal extends Component {
     }
   }
 
+  /**
+   * Closes the extra bubble modal.
+   */
   handleClose = () => {
     this.props.toggleExtraModal(this.state.type);
   }
 
+  /**
+   * Gets the user's chosen bubble (link) title (form data) and invokes the placement
+   * modal with the title.
+   * @param {Event} e - the submit event from submitting the extra bubble modal form.
+   */
   handleSubmit = (e) => {
     e.preventDefault();
     let form = e.target;
     let formData = new FormData(form);
-    // console.log(formData); // delete later
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson); // delete later
-    // set this.state.type to equal whatever the user inputs in the form control
     this.setState({type: formJson.bubbleTitle}, () => this.props.togglePlacementModal(this.state.type));
-    // this.props.togglePlacementModal(this.state.type);
   }
   render() {
     const {showExtraModal} = this.props;
@@ -34,7 +39,8 @@ class ExtraModal extends Component {
         <Modal.Body>
           <Form onSubmit={this.handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Bubble title</Form.Label>
+              <p>What do you want to name this chain link?</p>
+              <Form.Label>Chain link title</Form.Label>
               <Form.Control type="text" name="bubbleTitle" placeholder="Enter title" />
             </Form.Group>
             <Button variant="primary" type="submit" onClick={this.handleClose}>
@@ -42,14 +48,6 @@ class ExtraModal extends Component {
             </Button>
           </Form>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={this.handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={this.handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     );
   }
