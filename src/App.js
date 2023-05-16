@@ -15,10 +15,10 @@ class App extends Component {
     super(props);
     this.state = {
       links: [
-        { id: "vFactors", name: "vulnerability factors" },
-        { id: "promptingEvent", name: "prompting event" },
-        { id: "targetBehavior", name: "target behavior" },
-        { id: "solutions", name: "solutions" },
+        { id: "vFactors", name: "vulnerability factors", data: ""},
+        { id: "promptingEvent", name: "prompting event", data: "" },
+        { id: "targetBehavior", name: "target behavior", data: ""},
+        { id: "solutions", name: "solutions", data: "" },
       ],
       linksCount: 4,
       showPlacementModal: false,
@@ -44,20 +44,20 @@ class App extends Component {
         links.findIndex((link) => link.name === "links") + 1 ||
           links.findIndex((link) => link.name === "prompting event") + 1,
         0,
-        { id: newLinksCount, name: "emotions" }
+        { id: newLinksCount, name: "emotions", data: "" }
       );
     } else if (bubbleType === "short-term") {
       links.splice(
         links.findIndex((link) => link.name === "target behavior") + 1,
         0,
-        { id: newLinksCount, name: "short-term" }
+        { id: newLinksCount, name: "short-term", data: "" }
       );
     } else if (bubbleType === "long-term") {
       links.splice(
         links.findIndex((link) => link.name === "short-term") + 1 ||
           links.findIndex((link) => link.name === "target behavior") + 1,
         0,
-        { id: newLinksCount, name: "long-term" }
+        { id: newLinksCount, name: "long-term", data: "" }
       );
     }
     this.setState({ links: links, linksCount: newLinksCount });
@@ -114,7 +114,7 @@ class App extends Component {
           links.splice(
             links.findIndex((link) => link.name === position) + 1,
             0,
-            { id: newLinksCount, name: this.state.modalType }
+            { id: newLinksCount, name: this.state.modalType, data: "" }
           );
         else alert(`${position} bubble not added yet`);
       }
