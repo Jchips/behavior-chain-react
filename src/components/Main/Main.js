@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Render from "../Render";
 import FormGroup from "../sub-components/FormGroup";
 import { Form, Button } from "react-bootstrap";
+import html2canvas from 'html2canvas';
 import ChainBubble from '../../js/chainBubble';
 import './Main.scss';
 
@@ -10,7 +11,8 @@ class Main extends Component {
     super(props);
     this.state = {
       fullChain: [],
-      showChain: false
+      showChain: false,
+      showDownloadBtn: false
     }
   }
   /**
@@ -30,6 +32,7 @@ class Main extends Component {
     });
     console.log(this.props.links); // delete later
     this.renderEachChainBubble();
+    this.toggleDownloadBtn();
   }
 
   /**
@@ -38,7 +41,7 @@ class Main extends Component {
    */
   renderEachChainBubble() {
     let fullChain = this.props.links.map(chainBubble => {
-      return new ChainBubble(chainBubble.name, chainBubble.data, chainBubble.id);
+      return new ChainBubble(chainBubble.name, chainBubble.data, chainBubble.id, chainBubble.className);
     })
     this.setState({showChain: true});
     this.setState({fullChain});
@@ -53,6 +56,22 @@ class Main extends Component {
     document.getElementById('render-form').reset(); // clears form
     this.setState({fullChain: []});
     this.setState({showChain: false})
+    this.toggleDownloadBtn();
+  }
+
+  toggleDownloadBtn = () => {
+    this.setState({showDownloadBtn: this.state.showDownloadBtn ? false : true});
+  }
+
+  download = () => {
+    html2canvas(document.querySelector(".rendered-behavior-chain"))
+    .then(canvas => {
+      let a = document.createElement('a');
+      document.body.appendChild(a);
+      a.download = "behavior-chain.png";
+      a.href = canvas.toDataURL();
+      a.click();
+    });
   }
   
   render() {
@@ -63,16 +82,19 @@ class Main extends Component {
           <h2>Fill out to get your completed behavior chain</h2>
           <Form id="render-form" className="text-center" onSubmit={this.handleSubmit}>
             {links.map(link =>
-              <FormGroup link={link} removeBubble={removeBubble} key={link.id} id={link.id}/>
+              <FormGroup link={link} removeBubble={removeBubble} key={link.id} id={link.id} />
             )}
             <Button className="text-center" variant="primary" type="submit">
               Submit
             </Button>
           </Form>
-          <div class="btns text-center">
-            <Button className="text-center" variant="danger" type="button" onClick={this.resetForm}>
+          <div className="btns text-center">
+            <Button className="reset-btn" variant="danger" type="button" onClick={this.resetForm}>
               Reset
             </Button>
+            {this.state.showDownloadBtn && (
+              <Button className="download-btn" variant="info" type="button" onClick={this.download}>Download</Button>
+            )}
           </div>
         </section>
         {/* <div className=""> */}

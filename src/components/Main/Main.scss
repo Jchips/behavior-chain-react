@@ -1,13 +1,41 @@
 @import 'colors';
 
+body {
+  overflow-x :hidden;
+}
+
 .row {
   justify-content: space-around;
+  --bs-gutter-x: 0;
 }
 
 main {
   & button {
     margin: 5px 0;
   }
+}
+
+.form-group {
+  position: relative;
+  & button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 6px;
+    height: 20px;
+    // background-color: #f44f60;
+    // background-color: #dc3545;
+    // color: black;
+  }
+}
+
+.form-label {
+  text-transform: capitalize;
 }
 
 .modal-title {
@@ -20,11 +48,98 @@ main {
 }
 
 .modal-btns button {
-  margin: 2px;
+  margin: 2px;  
 }
 
-.submit-btn,
-.reset-btn {
+.btns {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  // display: block;
+}
+
+.download-btn,
+.reset-btn {
+  width: fit-content;
+  margin: 2px auto;
+}
+
+.chain-link {
+  background-color: $brownish;
+  border: 2px solid black;
+  border-bottom: 5px solid black;
+  padding: 30px;
+  border-radius: 30px;
+  color: white;
+  margin: 30px;
+  // position: relative;
+}
+
+.vFactors,
+.promptingEvent,
+.links,
+.emotions,
+.targetBehavior,
+.short-term,
+.long-term,
+.chain-link {
+  position: relative;
+}
+
+// Code from https://codepen.io/TerabyteTiger/pen/BvdVGg?editors=1100
+.vFactors:after,
+.promptingEvent:after,
+.links:after,
+.chain-link:after,
+.emotions:after,
+.targetBehavior:after,
+.short-term:after,
+.long-term:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid black;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+
+.vFactors {
+  background-color: $blue;
+}
+
+.promptingEvent {
+  background-color: $purple;
+  color: black;
+}
+
+.links {
+  background-color: $gold;
+  color: black;
+}
+
+.emotions {
+  background-color: $pink;
+}
+
+.targetBehavior {
+  background-color: $red;
+}
+
+.short-term {
+  background-color: $orange;
+  color: black;
+}
+
+.long-term {
+  background-color: $teal;
+  color: black;
+}
+
+.solutions {
+  background-color: $green;
 }

@@ -10,7 +10,7 @@ class Render extends Component {
         <h2>Rendered Behavior Chain</h2>
         {showChain && (<div className='rendered-chain-container'>
         {(fullChain.map(chainLink => 
-          <div id={chainLink.id} key={chainLink.id}>
+          <div id={chainLink.id} className={`${chainLink.className} chain-link`} key={chainLink.id}>
             <h3>{chainLink.title}</h3>
             <p>{chainLink.userInput}</p>
           </div>  

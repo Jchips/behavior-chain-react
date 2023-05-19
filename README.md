@@ -8,6 +8,7 @@ This site is for creating a behavior chain (DBT concept). Made in React.js. This
 
 ## Changelog
 
+- 05-18-23 (0.2.0): Fully functional behavior chain site.
 - 05-15-23 (0.1.1): Fixed bugs.
 - 05-13-23 (0.1.0): Initial commit. Ability to add and remove chain links
 

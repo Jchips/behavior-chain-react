@@ -15,10 +15,10 @@ class App extends Component {
     super(props);
     this.state = {
       links: [
-        { id: "vFactors", name: "vulnerability factors", data: ""},
-        { id: "promptingEvent", name: "prompting event", data: "" },
-        { id: "targetBehavior", name: "target behavior", data: ""},
-        { id: "solutions", name: "solutions", data: "" },
+        { id: "vFactors", name: "vulnerability factors", className: "vFactors", data: ""},
+        { id: "promptingEvent", name: "prompting event", className: "promptingEvent", data: "" },
+        { id: "targetBehavior", name: "target behavior", className: "targetBehavior", data: ""},
+        { id: "solutions", name: "solutions", className: "solutions", data: "" },
       ],
       linksCount: 4,
       showPlacementModal: false,
@@ -44,20 +44,20 @@ class App extends Component {
         links.findIndex((link) => link.name === "links") + 1 ||
           links.findIndex((link) => link.name === "prompting event") + 1,
         0,
-        { id: newLinksCount, name: "emotions", data: "" }
+        { id: newLinksCount, name: "emotions", className: "emotions", data: "" }
       );
-    } else if (bubbleType === "short-term") {
+    } else if (bubbleType === "short-term consequences") {
       links.splice(
         links.findIndex((link) => link.name === "target behavior") + 1,
         0,
-        { id: newLinksCount, name: "short-term", data: "" }
+        { id: newLinksCount, name: "short-term consequences", className: "short-term", data: "" }
       );
-    } else if (bubbleType === "long-term") {
+    } else if (bubbleType === "long-term consequences") {
       links.splice(
-        links.findIndex((link) => link.name === "short-term") + 1 ||
+        links.findIndex((link) => link.name === "short-term consequences") + 1 ||
           links.findIndex((link) => link.name === "target behavior") + 1,
         0,
-        { id: newLinksCount, name: "long-term", data: "" }
+        { id: newLinksCount, name: "long-term consequences", className: "long-term", data: "" }
       );
     }
     this.setState({ links: links, linksCount: newLinksCount });
@@ -105,7 +105,7 @@ class App extends Component {
       "prompting event",
       "emotions",
       "target behavior",
-      "consequences",
+      "long-term consequences",
     ];
     console.log("modal type:", this.state.modalType); // delete later
     for (let i = 0; i < positions.length; i++) {
@@ -114,7 +114,7 @@ class App extends Component {
           links.splice(
             links.findIndex((link) => link.name === position) + 1,
             0,
-            { id: newLinksCount, name: this.state.modalType, data: "" }
+            { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
           );
         else alert(`${position} bubble not added yet`);
       }
@@ -201,6 +201,9 @@ class App extends Component {
           toggleExtraModal={this.toggleExtraModal} // closes modal
           togglePlacementModal={this.togglePlacementModal}
         />
+        <footer className="bg-dark">
+          &copy; jrosecow
+        </footer>
       </div>
     );
   }

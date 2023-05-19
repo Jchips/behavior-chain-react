@@ -14,7 +14,7 @@ class PlacementModal extends Component {
           <Modal.Title>{modalType}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Where do you want your {modalType} bubble inserted?</p>
+          <p>Where do you want your {modalType} text box inserted?</p>
           {/* upgrade idea: loop through all values in links array and create button for each.
           Make before and after buttons and pass a before or after parameter into placement.
           If the place === before, make the splice position -1 instead of +1*/}
@@ -23,7 +23,7 @@ class PlacementModal extends Component {
             <Button variant='info' onClick={() => placement("prompting event")}>After prompting event</Button>
             <Button variant='info' onClick={() => placement("emotions")}>After emotions</Button>
             <Button variant='info' onClick={() => placement("target behavior")}>After target behavior</Button>
-            <Button variant='info' onClick={() => placement("consequences")}>After consequences</Button>
+            <Button variant='info' onClick={() => placement("long-term consequences")}>After consequences</Button>
           </div>
         </Modal.Body>
         <Modal.Footer>
