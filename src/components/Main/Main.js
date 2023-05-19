@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Render from "../components/Render";
-import FormGroup from "./sub-components/FormGroup";
+import Render from "../Render";
+import FormGroup from "../sub-components/FormGroup";
 import { Form, Button } from "react-bootstrap";
-import ChainBubble from '../js/chainBubble';
+import ChainBubble from '../../js/chainBubble';
+import './Main.scss';
 
 class Main extends Component {
   constructor(props) {
@@ -57,21 +58,26 @@ class Main extends Component {
   render() {
     const {links, removeBubble} = this.props;
     return (
-      <main>
-        <section>
-          <Form id="render-form" onSubmit={this.handleSubmit}>
+      <main className="row">
+        <section className="col-xl-5 col-lg-5 col-md-7 col-sm-7 col-12">
+          <h2>Fill out to get your completed behavior chain</h2>
+          <Form id="render-form" className="text-center" onSubmit={this.handleSubmit}>
             {links.map(link =>
               <FormGroup link={link} removeBubble={removeBubble} key={link.id} id={link.id}/>
             )}
-            <Button variant="primary" type="submit">
+            <Button className="text-center" variant="primary" type="submit">
               Submit
             </Button>
           </Form>
-          <Button variant="danger" type="button" onClick={this.resetForm}>
-            Reset
-          </Button>
+          <div class="btns text-center">
+            <Button className="text-center" variant="danger" type="button" onClick={this.resetForm}>
+              Reset
+            </Button>
+          </div>
         </section>
-        <Render links={links} showChain={this.state.showChain} fullChain={this.state.fullChain} renderEachChainBubble={this.renderEachChainBubble}/>
+        {/* <div className=""> */}
+          <Render links={links} showChain={this.state.showChain} fullChain={this.state.fullChain} renderEachChainBubble={this.renderEachChainBubble}/>
+        {/* </div> */}
       </main>
     );
   }

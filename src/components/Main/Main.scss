@@ -1,0 +1,30 @@
+@import 'colors';
+
+.row {
+  justify-content: space-around;
+}
+
+main {
+  & button {
+    margin: 5px 0;
+  }
+}
+
+.modal-title {
+  text-transform: capitalize;
+}
+
+.modal-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modal-btns button {
+  margin: 2px;
+}
+
+.submit-btn,
+.reset-btn {
+  display: flex;
+  justify-content: center;
+}

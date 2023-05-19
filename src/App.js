@@ -5,7 +5,7 @@
 
 import React, { Component } from "react";
 import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
+import Main from "./components/Main/Main";
 import PlacementModal from "./components/sub-components/PlacementModal";
 import ConsequencesModal from "./components/ConsequencesModal";
 import ExtraModal from "./components/ExtraModal";
@@ -168,6 +168,10 @@ class App extends Component {
     console.log(this.state.links); // delete later
     return (
       <div>
+        <header className="bg-dark">
+          <img src={require("./assets/pin.png")} alt="jrosecow logo" />
+          <h1>Create a Behavior Chain</h1>
+        </header>
         <Sidebar
           addBubble={this.addBubble}
           togglePlacementModal={this.togglePlacementModal}
