@@ -14,8 +14,11 @@ class ConsequencesModal extends Component {
           <Modal.Title>{modalType}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Button variant='info' onClick={() => addBubble("short-term")}>Short-term</Button>
-          <Button variant='info' onClick={() => addBubble("long-term")}>Long-term</Button>
+          <p>Choose a consequence type</p>
+          <div className='modal-btns'>
+            <Button variant='info' onClick={() => addBubble("short-term consequences")}>Short-term</Button>
+            <Button variant='info' onClick={() => addBubble("long-term consequences")}>Long-term</Button>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.handleClose}>

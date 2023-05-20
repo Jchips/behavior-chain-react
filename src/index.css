@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  /* margin-bottom: 20px; */
+}
+
+header,
+footer {
+  color: #eee;
+}
+
+h1, .h1 {
+  font-size: 2.3rem;
+  /* text-align: center; */
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+aside {
+  background-color: #6c757d;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+aside button {
+  border: 1px solid rgb(51, 139, 147);
+  margin: 0 5px;
+}
+
+footer {
+  margin-top: 20px;
+  padding: 30px;
+  text-align: center;
+}

@@ -10,7 +10,7 @@ class Sidebar extends Component {
     // let addLinks = this.props.addLinks;
     const { addBubble, togglePlacementModal, toggleConsequencesModal, extraBubble} = this.props;
     return (
-      <aside className="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-12">
+      <aside>
         <button id="add-links-btn" type="button" className="btn btn-light" onClick={() => togglePlacementModal('links')}>Add Links</button>
         <button id="add-emotions-btn" type="button" className="btn btn-light" onClick={() => addBubble('emotions')}>Add Emotions</button>
         <button id="add-consequences-btn" type="button" className="btn btn-light" onClick={() => toggleConsequencesModal('consequences')}>Add Consequences</button>
