@@ -19,11 +19,20 @@ class PlacementModal extends Component {
           Make before and after buttons and pass a before or after parameter into placement.
           If the place === before, make the splice position -1 instead of +1*/}
           <div className="modal-btns">
-            <Button variant='info' onClick={() => placement("vulnerability factors")}>After vulnerability factors</Button>
-            <Button variant='info' onClick={() => placement("prompting event")}>After prompting event</Button>
-            <Button variant='info' onClick={() => placement("emotions")}>After emotions</Button>
-            <Button variant='info' onClick={() => placement("target behavior")}>After target behavior</Button>
-            <Button variant='info' onClick={() => placement("long-term consequences")}>After consequences</Button>
+            <Button variant='info' onClick={() => placement("vulnerability factors", "after")}>After vulnerability factors</Button>
+            <Button variant='info' onClick={() => placement("prompting event", "after")}>After prompting event</Button>
+
+            <Button variant='info' onClick={() => placement("emotions", "after")}>After emotions</Button>
+            <Button variant='info' onClick={() => placement("emotions", "before")}>Before emotions</Button>
+
+            <Button variant='info' onClick={() => placement("target behavior", "after")}>After target behavior</Button>
+            <Button variant='info' onClick={() => placement("target behavior", "before")}>Before target behavior</Button>
+
+            <Button variant='info' onClick={() => placement("short-term consequences", "after")}>After short-term consequences</Button>
+            <Button variant='info' onClick={() => placement("long-term consequences", "after")}>After long-term consequences</Button>
+            
+            <Button variant='info' onClick={() => placement("short-term consequences", "before")}>Before short-term consequences</Button>
+            <Button variant='info' onClick={() => placement("long-term consequences", "before")}>Before long-term consequences</Button>
           </div>
         </Modal.Body>
         <Modal.Footer>

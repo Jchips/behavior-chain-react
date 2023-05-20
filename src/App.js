@@ -97,28 +97,29 @@ class App extends Component {
    * Then sets the chain (links state) to this modified new chain.
    * @param {String} position - the position the user wants the bubble to be added after.
    */
-  placement = (position) => {
+  placement = (position, beforeOrAfter) => {
     let links = [...this.state.links]; // copies the array in state
     const newLinksCount = this.state.linksCount + 1;
-    let positions = [
-      "vulnerability factors",
-      "prompting event",
-      "emotions",
-      "target behavior",
-      "long-term consequences",
-    ];
     console.log("modal type:", this.state.modalType); // delete later
-    for (let i = 0; i < positions.length; i++) {
-      if (position === positions[i]) {
-        if (links.findIndex((link) => link.name === position) !== -1)
-          links.splice(
-            links.findIndex((link) => link.name === position) + 1,
-            0,
-            { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
-          );
-        else alert(`${position} bubble not added yet`);
-      }
-    }
+    // for (let i = 0; i < positions.length; i++) {
+      // if () {
+        if (links.findIndex((link) => link.name === position) !== -1) {
+          if (beforeOrAfter === "after") {
+            links.splice(
+              links.findIndex((link) => link.name === position) + 1,
+              0,
+              { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
+            );
+          } else if (beforeOrAfter === "before") {
+            links.splice(
+              links.findIndex((link) => link.name === position),
+              0,
+              { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
+            );
+          }       
+        } else alert(`${position} bubble not added yet`);
+      // }
+    // }
     this.setState({ links: links, linksCount: newLinksCount });
   };
 
