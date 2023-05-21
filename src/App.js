@@ -84,41 +84,35 @@ class App extends Component {
     this.setState({ links: links, linksCount: newLinksCount });
   };
 
-  // updateLinksCount = () => {
-  //   this.setState({ linksCount: this.state.linksCount + 1 });
-  // };
-
   /**
    * Inserts a new bubble (link) in place where user wants it inserted.
    * First, creates a copy of the chain (links state).
-   * If the the bubble (link) user wants positioned after exists in the chain, it
+   * If the the bubble (link) user wants positioned before or after exists in the chain, it
    * adds the new bubble (link) after that one. Otherwise, it sends the user a
    * message.
    * Then sets the chain (links state) to this modified new chain.
    * @param {String} position - the position the user wants the bubble to be added after.
+   * @param {String} beforeOrAfter - whether the bubble should be position before or after
    */
-  placement = (position) => {
+  placement = (position, beforeOrAfter) => {
     let links = [...this.state.links]; // copies the array in state
     const newLinksCount = this.state.linksCount + 1;
-    let positions = [
-      "vulnerability factors",
-      "prompting event",
-      "emotions",
-      "target behavior",
-      "long-term consequences",
-    ];
     console.log("modal type:", this.state.modalType); // delete later
-    for (let i = 0; i < positions.length; i++) {
-      if (position === positions[i]) {
-        if (links.findIndex((link) => link.name === position) !== -1)
-          links.splice(
-            links.findIndex((link) => link.name === position) + 1,
-            0,
-            { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
-          );
-        else alert(`${position} bubble not added yet`);
-      }
-    }
+    if (links.findIndex((link) => link.name === position) !== -1) {
+      if (beforeOrAfter === "after") {
+        links.splice(
+          links.findIndex((link) => link.name === position) + 1,
+          0,
+          { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
+        );
+      } else if (beforeOrAfter === "before") {
+        links.splice(
+          links.findIndex((link) => link.name === position),
+          0,
+          { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
+        );
+      }       
+    } else alert(`${position} bubble not added yet`);
     this.setState({ links: links, linksCount: newLinksCount });
   };
 
@@ -181,7 +175,6 @@ class App extends Component {
         <Main
           links={this.state.links}
           linksCount={this.state.linksCount}
-          // updateLinksCount={this.updateLinksCount}
           removeBubble={this.removeBubble}
         />
         <PlacementModal

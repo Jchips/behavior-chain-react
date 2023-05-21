@@ -15,6 +15,10 @@ main {
   }
 }
 
+// h2 {
+//   text-align: center;
+// }
+
 .form-group {
   position: relative;
   & button {
@@ -36,9 +40,11 @@ main {
 
 .form-label {
   text-transform: capitalize;
+  font-weight: 600;
 }
 
-.modal-title {
+.modal-title,
+h3 {
   text-transform: capitalize;
 }
 
@@ -61,7 +67,7 @@ main {
 .download-btn,
 .reset-btn {
   width: fit-content;
-  margin: 2px auto;
+  margin: 5px auto;
 }
 
 .chain-link {
@@ -106,6 +112,12 @@ main {
   border-top: 25px solid black;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
+}
+
+.solutions:after {
+  border-top: 0 solid black;
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
 }
 
 .vFactors {

@@ -32,7 +32,7 @@ class Main extends Component {
     });
     console.log(this.props.links); // delete later
     this.renderEachChainBubble();
-    this.toggleDownloadBtn();
+    this.setState({showDownloadBtn: true})
   }
 
   /**
@@ -43,8 +43,7 @@ class Main extends Component {
     let fullChain = this.props.links.map(chainBubble => {
       return new ChainBubble(chainBubble.name, chainBubble.data, chainBubble.id, chainBubble.className);
     })
-    this.setState({showChain: true});
-    this.setState({fullChain});
+    this.setState({showChain: true, fullChain: fullChain});
   }
 
   /**
@@ -54,15 +53,13 @@ class Main extends Component {
    */
   resetForm = () => {
     document.getElementById('render-form').reset(); // clears form
-    this.setState({fullChain: []});
-    this.setState({showChain: false})
-    this.toggleDownloadBtn();
+    this.setState({fullChain: [], showChain: false, showDownloadBtn: false})
   }
 
-  toggleDownloadBtn = () => {
-    this.setState({showDownloadBtn: this.state.showDownloadBtn ? false : true});
-  }
-
+  /**
+   * Downloads a screenshot of the renderered behavior chain for user to keep.
+   * Code from Mohit K on https://stackoverflow.com/questions/10721884/render-html-to-an-image
+   */
   download = () => {
     html2canvas(document.querySelector(".rendered-behavior-chain"))
     .then(canvas => {
