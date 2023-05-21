@@ -43,7 +43,8 @@ main {
   font-weight: 600;
 }
 
-.modal-title {
+.modal-title,
+h3 {
   text-transform: capitalize;
 }
 
@@ -111,6 +112,12 @@ main {
   border-top: 25px solid black;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
+}
+
+.solutions:after {
+  border-top: 0 solid black;
+  border-left: 0 solid transparent;
+  border-right: 0 solid transparent;
 }
 
 .vFactors {

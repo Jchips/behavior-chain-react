@@ -4,10 +4,11 @@ This site is for creating a behavior chain (DBT concept). Made in React.js. This
 
 ## Author: J. Rose
 
-## Version: 0.1.1
+## Version: 1.0.1
 
 ## Changelog
 
+- 05-21-23 (1.0.1): Cleaned up the code a bit. Fixed minor details.
 - 05-20-23 (1.0.0): Added before options for the links.
 - 05-18-23 (0.2.0): Fully functional behavior chain site.
 - 05-15-23 (0.1.1): Fixed bugs.
@@ -16,6 +17,7 @@ This site is for creating a behavior chain (DBT concept). Made in React.js. This
 ## Links/Resources
 
 - [Bootstrap & React Bootstrap 5](https://react-bootstrap.github.io/getting-started/introduction/)
+- [html2canvas](https://html2canvas.hertzen.com/)
 
 ## Available Scripts
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
 class PlacementModal extends Component {
+  // Closes the placement modal
   handleClose = () => {
     this.props.togglePlacementModal(this.props.modalType);
   }
@@ -15,9 +16,6 @@ class PlacementModal extends Component {
         </Modal.Header>
         <Modal.Body>
           <p>Where do you want your {modalType} text box inserted?</p>
-          {/* upgrade idea: loop through all values in links array and create button for each.
-          Make before and after buttons and pass a before or after parameter into placement.
-          If the place === before, make the splice position -1 instead of +1*/}
           <div className="modal-btns">
             <Button variant='info' onClick={() => placement("vulnerability factors", "after")}>After vulnerability factors</Button>
             <Button variant='info' onClick={() => placement("prompting event", "after")}>After prompting event</Button>
