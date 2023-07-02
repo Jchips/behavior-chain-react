@@ -26,7 +26,6 @@ class ExtraModal extends Component {
     let form = e.target;
     let formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson); // delete later
     this.setState({type: formJson.bubbleTitle}, () => this.props.togglePlacementModal(this.state.type));
   }
   render() {
@@ -34,7 +33,7 @@ class ExtraModal extends Component {
     return (
       <Modal show={showExtraModal} onHide={this.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Extra</Modal.Title>
+          <Modal.Title>Custom</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={this.handleSubmit}>

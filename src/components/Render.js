@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 class Render extends Component {
   render() {
     const { fullChain, showChain } = this.props;
-    console.log('fullChain: ', fullChain); // delete later
-    console.log('fullChain length: ', fullChain.length); // delete later
     return (
       <section className='rendered-behavior-chain col-xl-4 col-lg-3 col-md-12 col-sm-12 col-12'>
         <h2>Rendered Behavior Chain</h2>

@@ -17,10 +17,6 @@ class FormGroup extends Component {
       </Form.Group>
     );
   }
-
-  componentDidMount() {
-    // console.log(this.props.link.id); // delete later
-  }
 }
 
 export default FormGroup;
