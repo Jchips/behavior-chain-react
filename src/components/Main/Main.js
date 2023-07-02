@@ -24,13 +24,11 @@ class Main extends Component {
     let form = e.target;
     let formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-    console.log('render form: ', formJson); // delete later
   
     // Sets the data property for each object in links to whatever values the user inputted.
     Object.entries(formJson).forEach(([key, value], index) => {
       this.props.links[index].data = value;
     });
-    console.log(this.props.links); // delete later
     this.renderEachChainBubble();
     this.setState({showDownloadBtn: true})
   }

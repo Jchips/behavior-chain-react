@@ -41,7 +41,7 @@ class App extends Component {
     const newLinksCount = this.state.linksCount + 1;
     if (bubbleType === "emotions") {
       links.splice(
-        links.findIndex((link) => link.name === "links") + 1 ||
+        links.findIndex((link) => link.name === "link") + 1 ||
           links.findIndex((link) => link.name === "prompting event") + 1,
         0,
         { id: newLinksCount, name: "emotions", className: "emotions", data: "" }
@@ -97,7 +97,6 @@ class App extends Component {
   placement = (position, beforeOrAfter) => {
     let links = [...this.state.links]; // copies the array in state
     const newLinksCount = this.state.linksCount + 1;
-    console.log("modal type:", this.state.modalType); // delete later
     if (links.findIndex((link) => link.name === position) !== -1) {
       if (beforeOrAfter === "after") {
         links.splice(
@@ -159,7 +158,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.links); // delete later
     return (
       <div>
         <header className="bg-dark">
