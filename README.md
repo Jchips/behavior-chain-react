@@ -6,8 +6,13 @@ This site is for creating a behavior chain (DBT concept). Made in React.js. This
 
 ## Version: 1.0.1
 
+## Architecture
+
+Made in React.js with JSX, HTML, SCSS and CSS.
+
 ## Changelog
 
+- 07-02-23 (1.0.2): Changed some naming.
 - 05-21-23 (1.0.1): Cleaned up the code a bit. Fixed minor details.
 - 05-20-23 (1.0.0): Added before options for the links.
 - 05-18-23 (0.2.0): Fully functional behavior chain site.
