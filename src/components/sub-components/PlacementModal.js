@@ -27,9 +27,9 @@ class PlacementModal extends Component {
             <Button variant='info' onClick={() => placement("target behavior", "before")}>Before target behavior</Button>
 
             <Button variant='info' onClick={() => placement("short-term consequences", "after")}>After short-term consequences</Button>
-            <Button variant='info' onClick={() => placement("long-term consequences", "after")}>After long-term consequences</Button>
-            
             <Button variant='info' onClick={() => placement("short-term consequences", "before")}>Before short-term consequences</Button>
+            
+            <Button variant='info' onClick={() => placement("long-term consequences", "after")}>After long-term consequences</Button>
             <Button variant='info' onClick={() => placement("long-term consequences", "before")}>Before long-term consequences</Button>
           </div>
         </Modal.Body>
