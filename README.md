@@ -1,17 +1,21 @@
 # Create a Behavior Chain site
 
-This site is for creating a behavior chain (DBT concept). Made in React.js. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This site is for creating a behavior chain (DBT concept). Made in React.js.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Author: J. Rose
+Live site: <https://behavior-chain.netlify.app/>
 
-## Version: 1.0.1
+## Author: Jelani R
+
+## Version: 1.0.3
 
 ## Architecture
 
-Made in React.js with JSX, HTML, SCSS and CSS.
+Made in React.js with JavaScript, JSX, HTML, SCSS, and CSS.
 
 ## Changelog
 
+- 01-13-24 (1.0.3): Allow for line breaks in textareas. Changed some colors in the rendered chain.
 - 07-02-23 (1.0.2): Changed some naming.
 - 05-21-23 (1.0.1): Cleaned up the code a bit. Fixed minor details.
 - 05-20-23 (1.0.0): Added before options for the links.
