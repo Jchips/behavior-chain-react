@@ -1,4 +1,3 @@
-// let chainBubbles = [];
 class ChainBubble {
 
   // CHAIN BUBBLE CONSTRUCTOR

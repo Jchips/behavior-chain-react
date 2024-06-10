@@ -24,13 +24,13 @@ class Main extends Component {
     let form = e.target;
     let formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
-  
+
     // Sets the data property for each object in links to whatever values the user inputted.
     Object.entries(formJson).forEach(([key, value], index) => {
       this.props.links[index].data = value;
     });
     this.renderEachChainBubble();
-    this.setState({showDownloadBtn: true})
+    this.setState({ showDownloadBtn: true })
   }
 
   /**
@@ -41,7 +41,7 @@ class Main extends Component {
     let fullChain = this.props.links.map(chainBubble => {
       return new ChainBubble(chainBubble.name, chainBubble.data, chainBubble.id, chainBubble.className);
     })
-    this.setState({showChain: true, fullChain: fullChain});
+    this.setState({ showChain: true, fullChain: fullChain });
   }
 
   /**
@@ -51,7 +51,7 @@ class Main extends Component {
    */
   resetForm = () => {
     document.getElementById('render-form').reset(); // clears form
-    this.setState({fullChain: [], showChain: false, showDownloadBtn: false})
+    this.setState({ fullChain: [], showChain: false, showDownloadBtn: false })
   }
 
   /**
@@ -60,17 +60,17 @@ class Main extends Component {
    */
   download = () => {
     html2canvas(document.querySelector(".rendered-behavior-chain"))
-    .then(canvas => {
-      let a = document.createElement('a');
-      document.body.appendChild(a);
-      a.download = "behavior-chain.png";
-      a.href = canvas.toDataURL();
-      a.click();
-    });
+      .then(canvas => {
+        let a = document.createElement('a');
+        document.body.appendChild(a);
+        a.download = "behavior-chain.png";
+        a.href = canvas.toDataURL();
+        a.click();
+      });
   }
-  
+
   render() {
-    const {links, removeBubble} = this.props;
+    const { links, removeBubble } = this.props;
     return (
       <main className="row">
         <section className="col-xl-5 col-lg-5 col-md-7 col-sm-7 col-12">
@@ -92,9 +92,7 @@ class Main extends Component {
             )}
           </div>
         </section>
-        {/* <div className=""> */}
-          <Render links={links} showChain={this.state.showChain} fullChain={this.state.fullChain} renderEachChainBubble={this.renderEachChainBubble}/>
-        {/* </div> */}
+        <Render links={links} showChain={this.state.showChain} fullChain={this.state.fullChain} renderEachChainBubble={this.renderEachChainBubble} />
       </main>
     );
   }

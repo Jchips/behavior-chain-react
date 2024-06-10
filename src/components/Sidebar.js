@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 
 class Sidebar extends Component {
-
-  // runAddBubble = (type) => {
-  //   this.props.addBubble(type);
-  // }
   render() {
-    // let addBubble = this.props.addBubble;
-    // let addLinks = this.props.addLinks;
-    const { addBubble, togglePlacementModal, toggleConsequencesModal, extraBubble} = this.props;
+    const { addBubble, togglePlacementModal, toggleConsequencesModal, extraBubble } = this.props;
     return (
       <aside>
         <button id="add-links-btn" type="button" className="btn btn-light" onClick={() => togglePlacementModal('link')}>Add Link</button>

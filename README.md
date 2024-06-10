@@ -7,14 +7,15 @@ Live site: <https://behavior-chain.netlify.app/>
 
 ## Author: Jelani R
 
-## Version: 1.0.3
+## Version: 1.0.4
 
 ## Architecture
 
-Made in React.js with JavaScript, JSX, HTML, SCSS, and CSS.
+Made in React.js with JavaScript, HTML/CSS, and SCSS.
 
 ## Changelog
 
+- 06-10-24 (1.0.4): Removed the colors.
 - 01-13-24 (1.0.3): Allow for line breaks in textareas. Changed some colors in the rendered chain.
 - 07-02-23 (1.0.2): Changed some naming.
 - 05-21-23 (1.0.1): Cleaned up the code a bit. Fixed minor details.
