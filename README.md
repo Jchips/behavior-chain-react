@@ -1,9 +1,12 @@
-# Create a Behavior Chain site
+# Create a Behavior Chain
 
-This site is for creating a behavior chain (DBT concept). Made in React.js.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application for creating a behavior chain (DBT concept).
 
-Live site: <https://behavior-chain.netlify.app/>
+Live site: <https://behaviorchain.netlify.app/>
+
+## What is a behavior chain?
+
+In Dialectical Behavior Therapy (DBT), behavior chains are used as a tool to analyze and understand problematic behaviors. The purpose is to identify the sequence of events, thoughts, feelings, and behaviors that lead to a particular problematic behavior, so that interventions can be targeted effectively. *-ChatGPT*
 
 ## Author: Jelani R
 
