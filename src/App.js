@@ -1,5 +1,4 @@
 /**
- * Author: J. Rose
  * Note: links and bubbles are the same thing. I haven't yet got to refactoring the code to just use one title yet.
  */
 
@@ -15,9 +14,9 @@ class App extends Component {
     super(props);
     this.state = {
       links: [
-        { id: "vFactors", name: "vulnerability factors", className: "vFactors", data: ""},
+        { id: "vFactors", name: "vulnerability factors", className: "vFactors", data: "" },
         { id: "promptingEvent", name: "prompting event", className: "promptingEvent", data: "" },
-        { id: "targetBehavior", name: "target behavior", className: "targetBehavior", data: ""},
+        { id: "targetBehavior", name: "target behavior", className: "targetBehavior", data: "" },
         { id: "solutions", name: "solutions", className: "solutions", data: "" },
       ],
       linksCount: 4,
@@ -42,7 +41,7 @@ class App extends Component {
     if (bubbleType === "emotions") {
       links.splice(
         links.findIndex((link) => link.name === "link") + 1 ||
-          links.findIndex((link) => link.name === "prompting event") + 1,
+        links.findIndex((link) => link.name === "prompting event") + 1,
         0,
         { id: newLinksCount, name: "emotions", className: "emotions", data: "" }
       );
@@ -55,7 +54,7 @@ class App extends Component {
     } else if (bubbleType === "long-term consequences") {
       links.splice(
         links.findIndex((link) => link.name === "short-term consequences") + 1 ||
-          links.findIndex((link) => link.name === "target behavior") + 1,
+        links.findIndex((link) => link.name === "target behavior") + 1,
         0,
         { id: newLinksCount, name: "long-term consequences", className: "long-term", data: "" }
       );
@@ -110,13 +109,13 @@ class App extends Component {
           0,
           { id: newLinksCount, name: this.state.modalType, className: this.state.modalType, data: "" }
         );
-      }       
+      }
     } else alert(`${position} bubble not added yet`);
     this.setState({ links: links, linksCount: newLinksCount });
   };
 
   /**
-   * Shows the extra bubble modal. 
+   * Shows the extra bubble modal.
    * Called in the Sidebar.js
    */
   extraBubble = () => {

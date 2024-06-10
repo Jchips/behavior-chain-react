@@ -1,7 +1,7 @@
 @import 'colors';
 
 body {
-  overflow-x :hidden;
+  overflow-x: hidden;
 }
 
 .row {
@@ -10,17 +10,14 @@ body {
 }
 
 main {
-  & button {
+  button {
     margin: 5px 0;
   }
 }
 
-// h2 {
-//   text-align: center;
-// }
-
 .form-group {
   position: relative;
+
   & button {
     position: absolute;
     display: flex;
@@ -32,9 +29,6 @@ main {
     margin-right: 10px;
     padding: 6px;
     height: 20px;
-    // background-color: #f44f60;
-    // background-color: #dc3545;
-    // color: black;
   }
 }
 
@@ -54,14 +48,13 @@ h3 {
 }
 
 .modal-btns button {
-  margin: 2px;  
+  margin: 2px;
 }
 
 .btns {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  // display: block;
 }
 
 .download-btn,
@@ -71,12 +64,11 @@ h3 {
 }
 
 .chain-link {
-  background-color: $gray;
+  background-color: $lighter-blue;
   border: 2px solid black;
   border-bottom: 5px solid black;
   padding: 30px;
   border-radius: 30px;
-  // color: white;
   color: black;
   margin: 30px;
 
@@ -96,7 +88,7 @@ h3 {
   position: relative;
 }
 
-// Code from https://codepen.io/TerabyteTiger/pen/BvdVGg?editors=1100
+// Code inspired from https://codepen.io/TerabyteTiger/pen/BvdVGg?editors=1100
 .vFactors:after,
 .promptingEvent:after,
 .links:after,
@@ -104,7 +96,7 @@ h3 {
 .emotions:after,
 .targetBehavior:after,
 .short-term:after,
-.long-term:after{
+.long-term:after {
   content: '';
   position: absolute;
   left: 0;
@@ -124,43 +116,14 @@ h3 {
   border-right: 0 solid transparent;
 }
 
-.vFactors {
-  background-color: $blue;
-  color: white;
-}
-
-.promptingEvent {
-  background-color: $purple;
-  color: white;
-  // color: black;
-}
-
-.links {
-  background-color: $gold;
-  color: black;
-}
-
-.emotions {
-  background-color: $pink;
-  color: white;
-}
-
-.targetBehavior {
-  background-color: $red;
-  color: white;
-}
-
-.short-term {
-  background-color: $orange;
-  color: black;
-}
-
-.long-term {
-  background-color: $teal;
-  color: black;
-}
-
+.vFactors,
+.promptingEvent,
+.links,
+.emotions,
+.targetBehavior,
+.short-term,
+.long-term,
 .solutions {
-  background-color: $green;
-  color: white;
+  background-color: $lighter-blue;
+  color: black;
 }
