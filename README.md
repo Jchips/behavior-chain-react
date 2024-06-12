@@ -12,13 +12,19 @@ In Dialectical Behavior Therapy (DBT), behavior chains are used as a tool to ana
 
 ## Version: 1.0.4
 
+## Project images
+
+![Create a Behavior Chain site](/src/assets/behavior-chain-1.png)
+
+![Create a Behavior Chain site](/src/assets/behavior-chain-2.png)
+
 ## Architecture
 
-Made in React.js with JavaScript, HTML/CSS, and SCSS.
+Made in React.js with JavaScript, CSS, and SCSS. Uses the Bootstrap framework.
 
 ## Changelog
 
-- 06-10-24 (1.0.4): Removed the colors.
+- 06-10-24 (1.0.4): Removed the colors. Added pictures to README.
 - 01-13-24 (1.0.3): Allow for line breaks in textareas. Changed some colors in the rendered chain.
 - 07-02-23 (1.0.2): Changed some naming.
 - 05-21-23 (1.0.1): Cleaned up the code a bit. Fixed minor details.
