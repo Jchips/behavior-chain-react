@@ -160,7 +160,6 @@ class App extends Component {
     return (
       <div>
         <header className="bg-dark">
-          <img src={require("./assets/pin.png")} alt="jrosecow logo" />
           <h1>Create a Behavior Chain</h1>
         </header>
         <Sidebar
@@ -191,9 +190,6 @@ class App extends Component {
           toggleExtraModal={this.toggleExtraModal} // closes modal
           togglePlacementModal={this.togglePlacementModal}
         />
-        <footer className="bg-dark">
-          &copy; jrosecow
-        </footer>
       </div>
     );
   }
